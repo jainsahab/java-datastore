@@ -3,8 +3,8 @@
 
 package com.google.datastore.v1;
 
-public interface RunQueryRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:google.datastore.v1.RunQueryRequest)
+public interface RunAggregationQueryRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:google.datastore.v1.RunAggregationQueryRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -119,31 +119,31 @@ public interface RunQueryRequestOrBuilder extends
    * The query to run.
    * </pre>
    *
-   * <code>.google.datastore.v1.Query query = 3;</code>
-   * @return Whether the query field is set.
+   * <code>.google.datastore.v1.AggregationQuery aggregation_query = 3;</code>
+   * @return Whether the aggregationQuery field is set.
    */
-  boolean hasQuery();
+  boolean hasAggregationQuery();
   /**
    * <pre>
    * The query to run.
    * </pre>
    *
-   * <code>.google.datastore.v1.Query query = 3;</code>
-   * @return The query.
+   * <code>.google.datastore.v1.AggregationQuery aggregation_query = 3;</code>
+   * @return The aggregationQuery.
    */
-  com.google.datastore.v1.Query getQuery();
+  com.google.datastore.v1.AggregationQuery getAggregationQuery();
   /**
    * <pre>
    * The query to run.
    * </pre>
    *
-   * <code>.google.datastore.v1.Query query = 3;</code>
+   * <code>.google.datastore.v1.AggregationQuery aggregation_query = 3;</code>
    */
-  com.google.datastore.v1.QueryOrBuilder getQueryOrBuilder();
+  com.google.datastore.v1.AggregationQueryOrBuilder getAggregationQueryOrBuilder();
 
   /**
    * <pre>
-   * The GQL query to run. This query must be a non-aggregation query.
+   * The GQL query to run. This query must be an aggregation query.
    * </pre>
    *
    * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
@@ -152,7 +152,7 @@ public interface RunQueryRequestOrBuilder extends
   boolean hasGqlQuery();
   /**
    * <pre>
-   * The GQL query to run. This query must be a non-aggregation query.
+   * The GQL query to run. This query must be an aggregation query.
    * </pre>
    *
    * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
@@ -161,12 +161,12 @@ public interface RunQueryRequestOrBuilder extends
   com.google.datastore.v1.GqlQuery getGqlQuery();
   /**
    * <pre>
-   * The GQL query to run. This query must be a non-aggregation query.
+   * The GQL query to run. This query must be an aggregation query.
    * </pre>
    *
    * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
    */
   com.google.datastore.v1.GqlQueryOrBuilder getGqlQueryOrBuilder();
 
-  public com.google.datastore.v1.RunQueryRequest.QueryTypeCase getQueryTypeCase();
+  public com.google.datastore.v1.RunAggregationQueryRequest.QueryTypeCase getQueryTypeCase();
 }

@@ -5,21 +5,21 @@ package com.google.datastore.v1;
 
 /**
  * <pre>
- * The request for [Datastore.RunQuery][google.datastore.v1.Datastore.RunQuery].
+ * The request for [Datastore.RunAggregationQuery][google.datastore.v1.Datastore.RunAggregationQuery].
  * </pre>
  *
- * Protobuf type {@code google.datastore.v1.RunQueryRequest}
+ * Protobuf type {@code google.datastore.v1.RunAggregationQueryRequest}
  */
-public final class RunQueryRequest extends
+public final class RunAggregationQueryRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:google.datastore.v1.RunQueryRequest)
-    RunQueryRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.datastore.v1.RunAggregationQueryRequest)
+    RunAggregationQueryRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use RunQueryRequest.newBuilder() to construct.
-  private RunQueryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use RunAggregationQueryRequest.newBuilder() to construct.
+  private RunAggregationQueryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private RunQueryRequest() {
+  private RunAggregationQueryRequest() {
     projectId_ = "";
     databaseId_ = "";
   }
@@ -28,7 +28,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new RunQueryRequest();
+    return new RunAggregationQueryRequest();
   }
 
   @java.lang.Override
@@ -36,7 +36,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private RunQueryRequest(
+  private RunAggregationQueryRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -81,14 +81,14 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            com.google.datastore.v1.Query.Builder subBuilder = null;
+            com.google.datastore.v1.AggregationQuery.Builder subBuilder = null;
             if (queryTypeCase_ == 3) {
-              subBuilder = ((com.google.datastore.v1.Query) queryType_).toBuilder();
+              subBuilder = ((com.google.datastore.v1.AggregationQuery) queryType_).toBuilder();
             }
             queryType_ =
-                input.readMessage(com.google.datastore.v1.Query.parser(), extensionRegistry);
+                input.readMessage(com.google.datastore.v1.AggregationQuery.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.datastore.v1.Query) queryType_);
+              subBuilder.mergeFrom((com.google.datastore.v1.AggregationQuery) queryType_);
               queryType_ = subBuilder.buildPartial();
             }
             queryTypeCase_ = 3;
@@ -143,15 +143,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_RunQueryRequest_descriptor;
+    return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_RunAggregationQueryRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_RunQueryRequest_fieldAccessorTable
+    return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_RunAggregationQueryRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.datastore.v1.RunQueryRequest.class, com.google.datastore.v1.RunQueryRequest.Builder.class);
+            com.google.datastore.v1.RunAggregationQueryRequest.class, com.google.datastore.v1.RunAggregationQueryRequest.Builder.class);
   }
 
   private int queryTypeCase_ = 0;
@@ -159,7 +159,7 @@ private static final long serialVersionUID = 0L;
   public enum QueryTypeCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    QUERY(3),
+    AGGREGATION_QUERY(3),
     GQL_QUERY(7),
     QUERYTYPE_NOT_SET(0);
     private final int value;
@@ -178,7 +178,7 @@ private static final long serialVersionUID = 0L;
 
     public static QueryTypeCase forNumber(int value) {
       switch (value) {
-        case 3: return QUERY;
+        case 3: return AGGREGATION_QUERY;
         case 7: return GQL_QUERY;
         case 0: return QUERYTYPE_NOT_SET;
         default: return null;
@@ -376,17 +376,17 @@ private static final long serialVersionUID = 0L;
     return getReadOptions();
   }
 
-  public static final int QUERY_FIELD_NUMBER = 3;
+  public static final int AGGREGATION_QUERY_FIELD_NUMBER = 3;
   /**
    * <pre>
    * The query to run.
    * </pre>
    *
-   * <code>.google.datastore.v1.Query query = 3;</code>
-   * @return Whether the query field is set.
+   * <code>.google.datastore.v1.AggregationQuery aggregation_query = 3;</code>
+   * @return Whether the aggregationQuery field is set.
    */
   @java.lang.Override
-  public boolean hasQuery() {
+  public boolean hasAggregationQuery() {
     return queryTypeCase_ == 3;
   }
   /**
@@ -394,35 +394,35 @@ private static final long serialVersionUID = 0L;
    * The query to run.
    * </pre>
    *
-   * <code>.google.datastore.v1.Query query = 3;</code>
-   * @return The query.
+   * <code>.google.datastore.v1.AggregationQuery aggregation_query = 3;</code>
+   * @return The aggregationQuery.
    */
   @java.lang.Override
-  public com.google.datastore.v1.Query getQuery() {
+  public com.google.datastore.v1.AggregationQuery getAggregationQuery() {
     if (queryTypeCase_ == 3) {
-       return (com.google.datastore.v1.Query) queryType_;
+       return (com.google.datastore.v1.AggregationQuery) queryType_;
     }
-    return com.google.datastore.v1.Query.getDefaultInstance();
+    return com.google.datastore.v1.AggregationQuery.getDefaultInstance();
   }
   /**
    * <pre>
    * The query to run.
    * </pre>
    *
-   * <code>.google.datastore.v1.Query query = 3;</code>
+   * <code>.google.datastore.v1.AggregationQuery aggregation_query = 3;</code>
    */
   @java.lang.Override
-  public com.google.datastore.v1.QueryOrBuilder getQueryOrBuilder() {
+  public com.google.datastore.v1.AggregationQueryOrBuilder getAggregationQueryOrBuilder() {
     if (queryTypeCase_ == 3) {
-       return (com.google.datastore.v1.Query) queryType_;
+       return (com.google.datastore.v1.AggregationQuery) queryType_;
     }
-    return com.google.datastore.v1.Query.getDefaultInstance();
+    return com.google.datastore.v1.AggregationQuery.getDefaultInstance();
   }
 
   public static final int GQL_QUERY_FIELD_NUMBER = 7;
   /**
    * <pre>
-   * The GQL query to run. This query must be a non-aggregation query.
+   * The GQL query to run. This query must be an aggregation query.
    * </pre>
    *
    * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
@@ -434,7 +434,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The GQL query to run. This query must be a non-aggregation query.
+   * The GQL query to run. This query must be an aggregation query.
    * </pre>
    *
    * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
@@ -449,7 +449,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The GQL query to run. This query must be a non-aggregation query.
+   * The GQL query to run. This query must be an aggregation query.
    * </pre>
    *
    * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
@@ -483,7 +483,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(2, getPartitionId());
     }
     if (queryTypeCase_ == 3) {
-      output.writeMessage(3, (com.google.datastore.v1.Query) queryType_);
+      output.writeMessage(3, (com.google.datastore.v1.AggregationQuery) queryType_);
     }
     if (queryTypeCase_ == 7) {
       output.writeMessage(7, (com.google.datastore.v1.GqlQuery) queryType_);
@@ -513,7 +513,7 @@ private static final long serialVersionUID = 0L;
     }
     if (queryTypeCase_ == 3) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.datastore.v1.Query) queryType_);
+        .computeMessageSize(3, (com.google.datastore.v1.AggregationQuery) queryType_);
     }
     if (queryTypeCase_ == 7) {
       size += com.google.protobuf.CodedOutputStream
@@ -535,10 +535,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.datastore.v1.RunQueryRequest)) {
+    if (!(obj instanceof com.google.datastore.v1.RunAggregationQueryRequest)) {
       return super.equals(obj);
     }
-    com.google.datastore.v1.RunQueryRequest other = (com.google.datastore.v1.RunQueryRequest) obj;
+    com.google.datastore.v1.RunAggregationQueryRequest other = (com.google.datastore.v1.RunAggregationQueryRequest) obj;
 
     if (!getProjectId()
         .equals(other.getProjectId())) return false;
@@ -557,8 +557,8 @@ private static final long serialVersionUID = 0L;
     if (!getQueryTypeCase().equals(other.getQueryTypeCase())) return false;
     switch (queryTypeCase_) {
       case 3:
-        if (!getQuery()
-            .equals(other.getQuery())) return false;
+        if (!getAggregationQuery()
+            .equals(other.getAggregationQuery())) return false;
         break;
       case 7:
         if (!getGqlQuery()
@@ -592,8 +592,8 @@ private static final long serialVersionUID = 0L;
     }
     switch (queryTypeCase_) {
       case 3:
-        hash = (37 * hash) + QUERY_FIELD_NUMBER;
-        hash = (53 * hash) + getQuery().hashCode();
+        hash = (37 * hash) + AGGREGATION_QUERY_FIELD_NUMBER;
+        hash = (53 * hash) + getAggregationQuery().hashCode();
         break;
       case 7:
         hash = (37 * hash) + GQL_QUERY_FIELD_NUMBER;
@@ -607,69 +607,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.datastore.v1.RunQueryRequest parseFrom(
+  public static com.google.datastore.v1.RunAggregationQueryRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.datastore.v1.RunQueryRequest parseFrom(
+  public static com.google.datastore.v1.RunAggregationQueryRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.datastore.v1.RunQueryRequest parseFrom(
+  public static com.google.datastore.v1.RunAggregationQueryRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.datastore.v1.RunQueryRequest parseFrom(
+  public static com.google.datastore.v1.RunAggregationQueryRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.datastore.v1.RunQueryRequest parseFrom(byte[] data)
+  public static com.google.datastore.v1.RunAggregationQueryRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.datastore.v1.RunQueryRequest parseFrom(
+  public static com.google.datastore.v1.RunAggregationQueryRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.datastore.v1.RunQueryRequest parseFrom(java.io.InputStream input)
+  public static com.google.datastore.v1.RunAggregationQueryRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.datastore.v1.RunQueryRequest parseFrom(
+  public static com.google.datastore.v1.RunAggregationQueryRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.datastore.v1.RunQueryRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.datastore.v1.RunAggregationQueryRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.datastore.v1.RunQueryRequest parseDelimitedFrom(
+  public static com.google.datastore.v1.RunAggregationQueryRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.datastore.v1.RunQueryRequest parseFrom(
+  public static com.google.datastore.v1.RunAggregationQueryRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.datastore.v1.RunQueryRequest parseFrom(
+  public static com.google.datastore.v1.RunAggregationQueryRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -682,7 +682,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.datastore.v1.RunQueryRequest prototype) {
+  public static Builder newBuilder(com.google.datastore.v1.RunAggregationQueryRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -699,29 +699,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request for [Datastore.RunQuery][google.datastore.v1.Datastore.RunQuery].
+   * The request for [Datastore.RunAggregationQuery][google.datastore.v1.Datastore.RunAggregationQuery].
    * </pre>
    *
-   * Protobuf type {@code google.datastore.v1.RunQueryRequest}
+   * Protobuf type {@code google.datastore.v1.RunAggregationQueryRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:google.datastore.v1.RunQueryRequest)
-      com.google.datastore.v1.RunQueryRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.datastore.v1.RunAggregationQueryRequest)
+      com.google.datastore.v1.RunAggregationQueryRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_RunQueryRequest_descriptor;
+      return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_RunAggregationQueryRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_RunQueryRequest_fieldAccessorTable
+      return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_RunAggregationQueryRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.datastore.v1.RunQueryRequest.class, com.google.datastore.v1.RunQueryRequest.Builder.class);
+              com.google.datastore.v1.RunAggregationQueryRequest.class, com.google.datastore.v1.RunAggregationQueryRequest.Builder.class);
     }
 
-    // Construct using com.google.datastore.v1.RunQueryRequest.newBuilder()
+    // Construct using com.google.datastore.v1.RunAggregationQueryRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -763,17 +763,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_RunQueryRequest_descriptor;
+      return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_RunAggregationQueryRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.datastore.v1.RunQueryRequest getDefaultInstanceForType() {
-      return com.google.datastore.v1.RunQueryRequest.getDefaultInstance();
+    public com.google.datastore.v1.RunAggregationQueryRequest getDefaultInstanceForType() {
+      return com.google.datastore.v1.RunAggregationQueryRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.datastore.v1.RunQueryRequest build() {
-      com.google.datastore.v1.RunQueryRequest result = buildPartial();
+    public com.google.datastore.v1.RunAggregationQueryRequest build() {
+      com.google.datastore.v1.RunAggregationQueryRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -781,8 +781,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.datastore.v1.RunQueryRequest buildPartial() {
-      com.google.datastore.v1.RunQueryRequest result = new com.google.datastore.v1.RunQueryRequest(this);
+    public com.google.datastore.v1.RunAggregationQueryRequest buildPartial() {
+      com.google.datastore.v1.RunAggregationQueryRequest result = new com.google.datastore.v1.RunAggregationQueryRequest(this);
       result.projectId_ = projectId_;
       result.databaseId_ = databaseId_;
       if (partitionIdBuilder_ == null) {
@@ -796,10 +796,10 @@ private static final long serialVersionUID = 0L;
         result.readOptions_ = readOptionsBuilder_.build();
       }
       if (queryTypeCase_ == 3) {
-        if (queryBuilder_ == null) {
+        if (aggregationQueryBuilder_ == null) {
           result.queryType_ = queryType_;
         } else {
-          result.queryType_ = queryBuilder_.build();
+          result.queryType_ = aggregationQueryBuilder_.build();
         }
       }
       if (queryTypeCase_ == 7) {
@@ -848,16 +848,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.datastore.v1.RunQueryRequest) {
-        return mergeFrom((com.google.datastore.v1.RunQueryRequest)other);
+      if (other instanceof com.google.datastore.v1.RunAggregationQueryRequest) {
+        return mergeFrom((com.google.datastore.v1.RunAggregationQueryRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.datastore.v1.RunQueryRequest other) {
-      if (other == com.google.datastore.v1.RunQueryRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.datastore.v1.RunAggregationQueryRequest other) {
+      if (other == com.google.datastore.v1.RunAggregationQueryRequest.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
         onChanged();
@@ -873,8 +873,8 @@ private static final long serialVersionUID = 0L;
         mergeReadOptions(other.getReadOptions());
       }
       switch (other.getQueryTypeCase()) {
-        case QUERY: {
-          mergeQuery(other.getQuery());
+        case AGGREGATION_QUERY: {
+          mergeAggregationQuery(other.getAggregationQuery());
           break;
         }
         case GQL_QUERY: {
@@ -900,11 +900,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.datastore.v1.RunQueryRequest parsedMessage = null;
+      com.google.datastore.v1.RunAggregationQueryRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.datastore.v1.RunQueryRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.datastore.v1.RunAggregationQueryRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1469,17 +1469,17 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.datastore.v1.Query, com.google.datastore.v1.Query.Builder, com.google.datastore.v1.QueryOrBuilder> queryBuilder_;
+        com.google.datastore.v1.AggregationQuery, com.google.datastore.v1.AggregationQuery.Builder, com.google.datastore.v1.AggregationQueryOrBuilder> aggregationQueryBuilder_;
     /**
      * <pre>
      * The query to run.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 3;</code>
-     * @return Whether the query field is set.
+     * <code>.google.datastore.v1.AggregationQuery aggregation_query = 3;</code>
+     * @return Whether the aggregationQuery field is set.
      */
     @java.lang.Override
-    public boolean hasQuery() {
+    public boolean hasAggregationQuery() {
       return queryTypeCase_ == 3;
     }
     /**
@@ -1487,21 +1487,21 @@ private static final long serialVersionUID = 0L;
      * The query to run.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 3;</code>
-     * @return The query.
+     * <code>.google.datastore.v1.AggregationQuery aggregation_query = 3;</code>
+     * @return The aggregationQuery.
      */
     @java.lang.Override
-    public com.google.datastore.v1.Query getQuery() {
-      if (queryBuilder_ == null) {
+    public com.google.datastore.v1.AggregationQuery getAggregationQuery() {
+      if (aggregationQueryBuilder_ == null) {
         if (queryTypeCase_ == 3) {
-          return (com.google.datastore.v1.Query) queryType_;
+          return (com.google.datastore.v1.AggregationQuery) queryType_;
         }
-        return com.google.datastore.v1.Query.getDefaultInstance();
+        return com.google.datastore.v1.AggregationQuery.getDefaultInstance();
       } else {
         if (queryTypeCase_ == 3) {
-          return queryBuilder_.getMessage();
+          return aggregationQueryBuilder_.getMessage();
         }
-        return com.google.datastore.v1.Query.getDefaultInstance();
+        return com.google.datastore.v1.AggregationQuery.getDefaultInstance();
       }
     }
     /**
@@ -1509,17 +1509,17 @@ private static final long serialVersionUID = 0L;
      * The query to run.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 3;</code>
+     * <code>.google.datastore.v1.AggregationQuery aggregation_query = 3;</code>
      */
-    public Builder setQuery(com.google.datastore.v1.Query value) {
-      if (queryBuilder_ == null) {
+    public Builder setAggregationQuery(com.google.datastore.v1.AggregationQuery value) {
+      if (aggregationQueryBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         queryType_ = value;
         onChanged();
       } else {
-        queryBuilder_.setMessage(value);
+        aggregationQueryBuilder_.setMessage(value);
       }
       queryTypeCase_ = 3;
       return this;
@@ -1529,15 +1529,15 @@ private static final long serialVersionUID = 0L;
      * The query to run.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 3;</code>
+     * <code>.google.datastore.v1.AggregationQuery aggregation_query = 3;</code>
      */
-    public Builder setQuery(
-        com.google.datastore.v1.Query.Builder builderForValue) {
-      if (queryBuilder_ == null) {
+    public Builder setAggregationQuery(
+        com.google.datastore.v1.AggregationQuery.Builder builderForValue) {
+      if (aggregationQueryBuilder_ == null) {
         queryType_ = builderForValue.build();
         onChanged();
       } else {
-        queryBuilder_.setMessage(builderForValue.build());
+        aggregationQueryBuilder_.setMessage(builderForValue.build());
       }
       queryTypeCase_ = 3;
       return this;
@@ -1547,13 +1547,13 @@ private static final long serialVersionUID = 0L;
      * The query to run.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 3;</code>
+     * <code>.google.datastore.v1.AggregationQuery aggregation_query = 3;</code>
      */
-    public Builder mergeQuery(com.google.datastore.v1.Query value) {
-      if (queryBuilder_ == null) {
+    public Builder mergeAggregationQuery(com.google.datastore.v1.AggregationQuery value) {
+      if (aggregationQueryBuilder_ == null) {
         if (queryTypeCase_ == 3 &&
-            queryType_ != com.google.datastore.v1.Query.getDefaultInstance()) {
-          queryType_ = com.google.datastore.v1.Query.newBuilder((com.google.datastore.v1.Query) queryType_)
+            queryType_ != com.google.datastore.v1.AggregationQuery.getDefaultInstance()) {
+          queryType_ = com.google.datastore.v1.AggregationQuery.newBuilder((com.google.datastore.v1.AggregationQuery) queryType_)
               .mergeFrom(value).buildPartial();
         } else {
           queryType_ = value;
@@ -1561,9 +1561,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (queryTypeCase_ == 3) {
-          queryBuilder_.mergeFrom(value);
+          aggregationQueryBuilder_.mergeFrom(value);
         } else {
-          queryBuilder_.setMessage(value);
+          aggregationQueryBuilder_.setMessage(value);
         }
       }
       queryTypeCase_ = 3;
@@ -1574,10 +1574,10 @@ private static final long serialVersionUID = 0L;
      * The query to run.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 3;</code>
+     * <code>.google.datastore.v1.AggregationQuery aggregation_query = 3;</code>
      */
-    public Builder clearQuery() {
-      if (queryBuilder_ == null) {
+    public Builder clearAggregationQuery() {
+      if (aggregationQueryBuilder_ == null) {
         if (queryTypeCase_ == 3) {
           queryTypeCase_ = 0;
           queryType_ = null;
@@ -1588,7 +1588,7 @@ private static final long serialVersionUID = 0L;
           queryTypeCase_ = 0;
           queryType_ = null;
         }
-        queryBuilder_.clear();
+        aggregationQueryBuilder_.clear();
       }
       return this;
     }
@@ -1597,27 +1597,27 @@ private static final long serialVersionUID = 0L;
      * The query to run.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 3;</code>
+     * <code>.google.datastore.v1.AggregationQuery aggregation_query = 3;</code>
      */
-    public com.google.datastore.v1.Query.Builder getQueryBuilder() {
-      return getQueryFieldBuilder().getBuilder();
+    public com.google.datastore.v1.AggregationQuery.Builder getAggregationQueryBuilder() {
+      return getAggregationQueryFieldBuilder().getBuilder();
     }
     /**
      * <pre>
      * The query to run.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 3;</code>
+     * <code>.google.datastore.v1.AggregationQuery aggregation_query = 3;</code>
      */
     @java.lang.Override
-    public com.google.datastore.v1.QueryOrBuilder getQueryOrBuilder() {
-      if ((queryTypeCase_ == 3) && (queryBuilder_ != null)) {
-        return queryBuilder_.getMessageOrBuilder();
+    public com.google.datastore.v1.AggregationQueryOrBuilder getAggregationQueryOrBuilder() {
+      if ((queryTypeCase_ == 3) && (aggregationQueryBuilder_ != null)) {
+        return aggregationQueryBuilder_.getMessageOrBuilder();
       } else {
         if (queryTypeCase_ == 3) {
-          return (com.google.datastore.v1.Query) queryType_;
+          return (com.google.datastore.v1.AggregationQuery) queryType_;
         }
-        return com.google.datastore.v1.Query.getDefaultInstance();
+        return com.google.datastore.v1.AggregationQuery.getDefaultInstance();
       }
     }
     /**
@@ -1625,32 +1625,32 @@ private static final long serialVersionUID = 0L;
      * The query to run.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 3;</code>
+     * <code>.google.datastore.v1.AggregationQuery aggregation_query = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.datastore.v1.Query, com.google.datastore.v1.Query.Builder, com.google.datastore.v1.QueryOrBuilder> 
-        getQueryFieldBuilder() {
-      if (queryBuilder_ == null) {
+        com.google.datastore.v1.AggregationQuery, com.google.datastore.v1.AggregationQuery.Builder, com.google.datastore.v1.AggregationQueryOrBuilder> 
+        getAggregationQueryFieldBuilder() {
+      if (aggregationQueryBuilder_ == null) {
         if (!(queryTypeCase_ == 3)) {
-          queryType_ = com.google.datastore.v1.Query.getDefaultInstance();
+          queryType_ = com.google.datastore.v1.AggregationQuery.getDefaultInstance();
         }
-        queryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.datastore.v1.Query, com.google.datastore.v1.Query.Builder, com.google.datastore.v1.QueryOrBuilder>(
-                (com.google.datastore.v1.Query) queryType_,
+        aggregationQueryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.AggregationQuery, com.google.datastore.v1.AggregationQuery.Builder, com.google.datastore.v1.AggregationQueryOrBuilder>(
+                (com.google.datastore.v1.AggregationQuery) queryType_,
                 getParentForChildren(),
                 isClean());
         queryType_ = null;
       }
       queryTypeCase_ = 3;
       onChanged();;
-      return queryBuilder_;
+      return aggregationQueryBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.datastore.v1.GqlQuery, com.google.datastore.v1.GqlQuery.Builder, com.google.datastore.v1.GqlQueryOrBuilder> gqlQueryBuilder_;
     /**
      * <pre>
-     * The GQL query to run. This query must be a non-aggregation query.
+     * The GQL query to run. This query must be an aggregation query.
      * </pre>
      *
      * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
@@ -1662,7 +1662,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The GQL query to run. This query must be a non-aggregation query.
+     * The GQL query to run. This query must be an aggregation query.
      * </pre>
      *
      * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
@@ -1684,7 +1684,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The GQL query to run. This query must be a non-aggregation query.
+     * The GQL query to run. This query must be an aggregation query.
      * </pre>
      *
      * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
@@ -1704,7 +1704,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The GQL query to run. This query must be a non-aggregation query.
+     * The GQL query to run. This query must be an aggregation query.
      * </pre>
      *
      * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
@@ -1722,7 +1722,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The GQL query to run. This query must be a non-aggregation query.
+     * The GQL query to run. This query must be an aggregation query.
      * </pre>
      *
      * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
@@ -1749,7 +1749,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The GQL query to run. This query must be a non-aggregation query.
+     * The GQL query to run. This query must be an aggregation query.
      * </pre>
      *
      * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
@@ -1772,7 +1772,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The GQL query to run. This query must be a non-aggregation query.
+     * The GQL query to run. This query must be an aggregation query.
      * </pre>
      *
      * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
@@ -1782,7 +1782,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The GQL query to run. This query must be a non-aggregation query.
+     * The GQL query to run. This query must be an aggregation query.
      * </pre>
      *
      * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
@@ -1800,7 +1800,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The GQL query to run. This query must be a non-aggregation query.
+     * The GQL query to run. This query must be an aggregation query.
      * </pre>
      *
      * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
@@ -1836,41 +1836,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:google.datastore.v1.RunQueryRequest)
+    // @@protoc_insertion_point(builder_scope:google.datastore.v1.RunAggregationQueryRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.datastore.v1.RunQueryRequest)
-  private static final com.google.datastore.v1.RunQueryRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.datastore.v1.RunAggregationQueryRequest)
+  private static final com.google.datastore.v1.RunAggregationQueryRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.datastore.v1.RunQueryRequest();
+    DEFAULT_INSTANCE = new com.google.datastore.v1.RunAggregationQueryRequest();
   }
 
-  public static com.google.datastore.v1.RunQueryRequest getDefaultInstance() {
+  public static com.google.datastore.v1.RunAggregationQueryRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RunQueryRequest>
-      PARSER = new com.google.protobuf.AbstractParser<RunQueryRequest>() {
+  private static final com.google.protobuf.Parser<RunAggregationQueryRequest>
+      PARSER = new com.google.protobuf.AbstractParser<RunAggregationQueryRequest>() {
     @java.lang.Override
-    public RunQueryRequest parsePartialFrom(
+    public RunAggregationQueryRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new RunQueryRequest(input, extensionRegistry);
+      return new RunAggregationQueryRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<RunQueryRequest> parser() {
+  public static com.google.protobuf.Parser<RunAggregationQueryRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<RunQueryRequest> getParserForType() {
+  public com.google.protobuf.Parser<RunAggregationQueryRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.datastore.v1.RunQueryRequest getDefaultInstanceForType() {
+  public com.google.datastore.v1.RunAggregationQueryRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
