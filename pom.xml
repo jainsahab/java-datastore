@@ -271,6 +271,7 @@
     <module>proto-google-cloud-datastore-admin-v1</module>
     <module>datastore-v1-proto-client</module>
     <module>google-cloud-datastore-bom</module>
+    <module>testing-client</module>
   </modules>
 
   </project>
