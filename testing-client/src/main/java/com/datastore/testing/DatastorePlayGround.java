@@ -4,6 +4,10 @@ import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.EntityQuery;
+import com.google.cloud.datastore.Key;
+import com.google.cloud.datastore.KeyQuery;
+import com.google.cloud.datastore.ProjectionEntity;
+import com.google.cloud.datastore.ProjectionEntityQuery;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.spi.v1.HttpDatastoreRpc;
@@ -18,6 +22,7 @@ import com.google.datastore.v1.PropertyFilter;
 import com.google.datastore.v1.PropertyFilter.Operator;
 import com.google.datastore.v1.PropertyReference;
 // import com.google.datastore.v1.Query;
+import com.google.datastore.v1.Query;
 import com.google.datastore.v1.RunAggregationQueryRequest;
 import com.google.datastore.v1.RunAggregationQueryResponse;
 import com.google.datastore.v1.RunQueryRequest;
@@ -40,6 +45,34 @@ public class DatastorePlayGround {
         //     System.out.println("Value is: " + entity.getKey());
         // }
 
+        System.out.println("**************** key query start ****************");
+        KeyQuery keyQuery = com.google.cloud.datastore.Query.newKeyQueryBuilder()
+            .setKind("Character")
+            .setNamespace("1660851506815")
+            .build();
+
+        QueryResults<Key> keyQueryResults = datastoreOptions.getService().run(keyQuery);
+
+        while (keyQueryResults.hasNext()) {
+            System.out.println(keyQueryResults.next());
+        }
+        System.out.println("**************** key query end ****************");
+
+        System.out.println("**************** projection query start ****************");
+
+      ProjectionEntityQuery projectionQuery = com.google.cloud.datastore.Query.newProjectionEntityQueryBuilder()
+          .setKind("Character")
+          .setNamespace("1660851506815")
+          .addProjection("name")
+          .build();
+
+      QueryResults<ProjectionEntity> projectionEntityQueryResults = datastoreOptions.getService().run(projectionQuery);
+
+      while (projectionEntityQueryResults.hasNext()){
+        System.out.println(projectionEntityQueryResults.next().getProperties());
+      }
+
+      System.out.println("**************** projection query end ****************");
 
         //Regular Select Query
         DatastoreRpc datastoreRpc = new HttpDatastoreRpc(datastoreOptions);
