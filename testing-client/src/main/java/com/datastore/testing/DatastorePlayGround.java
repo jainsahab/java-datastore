@@ -4,6 +4,7 @@ import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.EntityQuery;
+import com.google.cloud.datastore.GqlQuery;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyQuery;
 import com.google.cloud.datastore.ProjectionEntity;
@@ -45,7 +46,15 @@ public class DatastorePlayGround {
         //     System.out.println("Value is: " + entity.getKey());
         // }
 
-        System.out.println("**************** key query start ****************");
+      GqlQuery<?> gqlQuery = com.google.cloud.datastore.Query.newGqlQueryBuilder(
+              "AGGREGATE COUNT AS first_count OVER(SELECT * from Character)")
+          .setNamespace("1660851506815")
+          .build();
+      // QueryResults<?> queryResults = datastoreOptions.getService().run(gqlQuery);
+
+      // System.out.println(queryResults);
+
+      System.out.println("**************** key query start ****************");
         KeyQuery keyQuery = com.google.cloud.datastore.Query.newKeyQueryBuilder()
             .setKind("Character")
             .setNamespace("1660851506815")
@@ -104,7 +113,8 @@ public class DatastorePlayGround {
             .build();
 
         RunAggregationQueryRequest runAggregationQueryRequest = RunAggregationQueryRequest.newBuilder()
-            .setAggregationQuery(aggregationQuery)
+            // .setAggregationQuery(aggregationQuery)
+            .setGqlQuery(com.google.datastore.v1.GqlQuery.newBuilder().setQueryString("AGGREGATE COUNT(*) AS first_count OVER(SELECT * from Character)"))
             .setPartitionId(partitionId)
             .build();
 
